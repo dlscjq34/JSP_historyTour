@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%
+	//쿠키에 아이디가 있으면 빼와서 로그인 유지
+	Cookie[] cookies = request.getCookies();
+	for(Cookie cookie : cookies) {
+		if(cookie.getName().equals("id")) {
+			String id = cookie.getValue();
+			session.setAttribute("id", id);
+		}
+	}
+
+%>
+
+<header>
+	<!-- 세션 -->
+    <div class="home-line">
+        <h1><a href="index.do">Home</a></h1>
+        
+        <c:choose>
+        	<c:when test="${ id ne null }">
+        		${ id } 님 반갑습니다.&nbsp;
+        		<a href="myPage.do">마이페이지</a>&nbsp;
+        		<a href="logoutPro.do">로그아웃</a>
+        	</c:when>
+        	<c:otherwise>
+        		 <a href="login.do">로그인&nbsp;</a>
+        	</c:otherwise>
+        </c:choose>
+       
+        
+    </div>
+    <div class="menu">
+        <a href="intro.do">소개</a>                 
+        <a href="schedule.do">일정</a>
+        <a href="information.do">정보</a>
+        <a href="board.do">게시판</a>
+    </div>
+</header>

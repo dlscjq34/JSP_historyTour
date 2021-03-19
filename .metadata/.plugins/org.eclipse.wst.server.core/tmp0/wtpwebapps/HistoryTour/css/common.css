@@ -1,0 +1,47 @@
+body {
+  grid-template-columns: 1fr 1fr;
+  box-sizing: border-box;
+  margin: 0 300px;
+}
+
+/* header ----------------------------------------------- */
+
+header {
+  background: rosybrown;
+  height: 150px;
+}
+header .home-line {
+  display: flex;
+}
+header .home-line h1 {
+  flex: 1;
+}
+header .menu {
+  text-align: center;
+  font-size: 20px;
+}
+
+/* <aside> <article> ----------------------------------------------- */
+
+.center {
+  display: flex;
+  height: 500px;
+  background: turquoise;
+}
+.center aside {
+  background: sandybrown;
+  flex: 2;
+}
+.center article {
+  background: thistle;
+  flex: 8;
+  text-align: center;
+}
+
+
+/* footer ----------------------------------------------- */
+
+footer {
+  background: wheat;
+  height: 200px;
+}

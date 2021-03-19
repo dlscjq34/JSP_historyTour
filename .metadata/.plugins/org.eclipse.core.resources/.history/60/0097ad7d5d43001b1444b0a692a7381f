@@ -1,0 +1,69 @@
+package com.tour.controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("*.do")
+public class FrontController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// ����� ��û �ּҿ��� ��ɾ� ����
+		String requestURI = request.getRequestURI();
+		String contextPath = request.getContextPath();
+		
+		System.out.println("doGet URI : "+requestURI);		//	/HistoryTour/index.do
+		System.out.println("ContextPath : "+contextPath);	//	/HistoryTour
+		
+		String command = requestURI.substring(contextPath.length());
+		command = command.substring(0, command.indexOf(".do"));
+		System.out.println("command : "+command);	//	/index
+		
+		//������ ��ɾ�� �ش� �׼� ����
+		ActionFactory actionFactory = ActionFactory.getInstance();
+		Action action = actionFactory.getAction(command);
+		if(action == null)
+			System.out.println("action is not found");
+		
+		//�׼ǿ��� �̾ƿ� jsp�ּҿ� �ٽ�����
+		String viewAddress = "";
+		try {
+			viewAddress = action.execute(request, response);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("viewAddress : "+viewAddress);	//	redirect:login
+		
+		
+		//jsp�ּҿ� �ٽ������� redirect�� ���
+		if(viewAddress.startsWith("redirect:")) {
+			viewAddress = viewAddress.substring("redirect:".length());
+			System.out.println("redirect path :"+viewAddress);
+			response.sendRedirect(viewAddress);
+		}
+		//jsp�ּҿ� �ٽ������� forwading�� ���
+		else {
+			String jspPath = "/WEB-INF/views/"+viewAddress+".jsp";
+			System.out.println("dispatch path : "+jspPath);	// //WEB-INF/views/index.jsp
+			RequestDispatcher dispatcher = request.getRequestDispatcher(jspPath);
+			dispatcher.forward(request, response);
+		}
+			
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		System.out.println("doPost URI : "+request.getRequestURI());//test
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,17 @@
+.center article .menu {
+  display: flex;
+  justify-content: space-around;
+  height: 300px;
+}
+.center article .schedule {
+  width: 200px;
+  background: cornflowerblue;
+}
+.center article .recent {
+  width: 200px;
+  background: chartreuse;
+}
+.center article .news {
+  width: 200px;
+  background: yellow;
+}

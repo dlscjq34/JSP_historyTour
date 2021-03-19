@@ -1,0 +1,13 @@
+.center article .board {
+  display: grid;
+  grid-template-rows: 2fr;
+  align-content: space-between;
+  height: 400px;
+  /* background: green; */
+}
+.center article .board table {
+  width: 700px;
+  margin: 0 auto;
+  /* background: blue; */
+}
+

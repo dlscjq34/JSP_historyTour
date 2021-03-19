@@ -1,0 +1,7 @@
+.center article table {
+  width: 700px;
+  margin: 0 auto;
+}
+.center article table tbody tr {
+  cursor: pointer;
+}

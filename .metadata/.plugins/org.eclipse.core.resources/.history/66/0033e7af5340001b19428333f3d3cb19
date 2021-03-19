@@ -1,0 +1,22 @@
+package com.tour.controller.ticketing;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.tour.DAO.BoardDAO;
+import com.tour.controller.Action;
+
+public class SearchProAction implements Action {
+
+//	@Override
+//	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+//		System.out.println("SearchProAction");
+//		
+//		BoardDAO dao = BoardDAO.getInstance();
+//		dao.getList(startPage, pageSize, field, word)
+//		
+		
+		return "redirect:board.do";
+	}
+
+}

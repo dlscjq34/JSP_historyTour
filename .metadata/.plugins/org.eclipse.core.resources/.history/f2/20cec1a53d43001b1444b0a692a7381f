@@ -1,0 +1,11 @@
+.center article form fieldset {
+  height: 300px;  
+}
+
+.center article form .frm {
+  position: relative;
+  margin-top: 5%;
+  left: 40%;
+  width: 100px;
+  font-size: 20px;
+}

@@ -1,0 +1,75 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <jsp:include page="/WEB-INF/views/include/head.jsp" />
+    <link rel="stylesheet" href="css/board.css">
+</head>
+<body>
+    <!-- <header> -->
+    <jsp:include page="/WEB-INF/views/include/header.jsp" />
+
+
+    <!-- <aside> <article> -->
+    <div class="center">
+        <jsp:include page="/WEB-INF/views/include/aside.jsp" />
+    
+        <article>
+            <h1>게시판</h1>            
+            <div class="board">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>글번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>작성일</th>
+                            <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>글번호1</td>
+                            <td>제목1</td>
+                            <td>작성자1</td>
+                            <td>작성일1</td>
+                            <td>조회수1</td>
+                        </tr>
+                        <tr>
+                            <td>글번호2</td>
+                            <td>제목2</td>
+                            <td>작성자2</td>
+                            <td>작성일2</td>
+                            <td>조회수2</td>
+                        </tr>
+                        <tr>
+                            <td>글번호3</td>
+                            <td>제목3</td>
+                            <td>작성자3</td>
+                            <td>작성일3</td>
+                            <td>조회수3</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <form action="">
+                    <select name="field" id="field">
+                        <option value="title">제목</option>
+                        <option value="name">이름</option>
+                    </select>
+                    <input type="text" name='word'>
+                    <input type="submit" name='submit' value="검색">
+                </form>
+            </div>           
+            
+			<input type="button" name='write' value="글쓰기" onclick="location.href='write.do'">
+        </article>
+    </div>
+    
+    
+    <!-- <footer> -->
+    <jsp:include page="/WEB-INF/views/include/footer.jsp" />
+
+    
+</body>
+</html>

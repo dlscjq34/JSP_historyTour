@@ -1,0 +1,69 @@
+1607835804735	Move 'index.css' to 'css'
+1607840874524	Move 'index.jsp' to 'views'
+1607842067784	Rename package 'com.tour.controller.ticketing'
+1607842088768	Copy package
+1607842098845	Copy package
+1607842104372	Copy compilation unit
+1607842123664	Rename type 'IndexAction'
+1607842634862	Copy compilation unit
+1607842843541	Rename type 'IndexAction'
+1607842975606	Copy compilation unit
+1607842996830	Delete element
+1607843048261	Copy compilation unit
+1607843058303	Rename type 'IntroAction'
+1607843146514	Copy compilation unit
+1607843177376	Rename type 'ScheduleAction'
+1607843217954	Copy compilation unit
+1607843237582	Copy compilation unit
+1607843245501	Copy compilation unit
+1607844423117	Rename resource 'logIn.jsp'
+1607845330721	Rename resource 'login.jsp'
+1607845395796	Rename type 'LoginAction'
+1607845490411	Copy file
+1607845550229	Delete element
+1607845554898	Rename resource 'logIn.jsp'
+1607845588798	Rename resource 'xman.jsp'
+1607845614947	Rename resource 'login.jsp'
+1607845653733	Rename resource 'logIn.jsp'
+1607845667985	Rename resource 'login.jsp'
+1607845692114	Rename resource 'x.jsp'
+1607845761238	Rename resource 'logIn.jsp'
+1607845808300	Rename resource 'login.jsp'
+1607845832149	Rename resource 'z.jsp'
+1607845962884	Copy file
+1607845973352	Delete element
+1607845991478	Copy compilation unit
+1607846007997	Copy compilation unit
+1607846014287	Copy compilation unit
+1607847497074	Rename package 'com.tour.momain'
+1607847882311	Rename resource 'context.xml'
+1607847887457	Rename resource 'DBCP-context.xml'
+1607847892062	Rename resource 'DBCPcontext.xml'
+1607847961677	Rename type 'JDBCUtils'
+1607847981440	Rename type 'JDBCutils'
+1607854581352	Copy compilation unit
+1607856090759	Rename resource 'DBCP-context.xml'
+1607860623590	Copy compilation unit
+1607866686253	Copy compilation unit
+1607949071663	Copy compilation unit
+1607949079794	Rename type 'TourBoardVO'
+1607949294983	Copy compilation unit
+1607949829893	Copy compilation unit
+1607949914206	Copy file
+1607951210130	Copy compilation unit
+1608032733954	Delete element
+1608033039605	Move file
+1608033054639	Copy compilation unit
+1608159333636	Copy compilation unit
+1608160677555	Rename type 'BoardDetailProAction'
+1608193124457	Move 'detail.jsp' to 'ticketing'
+1608210004148	Delete element
+1608255516851	Move file
+1608255537068	Copy compilation unit
+1608256340386	Move 'boardDetail.jsp' to 'ticketing'
+1608265932697	Copy compilation unit
+1608291081949	Move file
+1608291098963	Copy compilation unit
+1608291672118	Move 'boardDetailUpdate.jsp' to 'ticketing'
+1608292067057	Copy compilation unit
+1608292085982	Rename type 'xxxx'

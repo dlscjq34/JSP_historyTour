@@ -1,0 +1,36 @@
+package com.tour.controller.ticketing;
+
+import java.io.File;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.tour.DAO.BoardDAO;
+import com.tour.VO.BoardVO;
+import com.tour.controller.Action;
+
+public class BoardDeleteProAction implements Action {
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("BoardDeleteProAction");
+		
+		int num = Integer.parseInt(request.getParameter("num"));
+		String filename = request.getParameter("filename");
+		
+		if(filename != null) {	// 첨부파일 있을 시 삭제하기
+			ServletContext context = request.getServletContext();
+			String realPath = context.getRealPath("/upload");	//실제 경로 탐색
+			File file = new File(realPath, filename);
+			
+		}
+			
+		BoardDAO dao = BoardDAO.getInstance();
+		
+		
+//		dao.delete(num);
+		
+		return "redirect:board.do";
+	}
+}

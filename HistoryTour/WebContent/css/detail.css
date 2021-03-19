@@ -1,0 +1,15 @@
+.center article .detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.center article .detail li {
+  margin: 30px -50px;
+  font-weight: bold;
+}
+.center article .detail img {
+  width: 400px;
+}
+.center article form input {  
+  font-size: 20px;
+}

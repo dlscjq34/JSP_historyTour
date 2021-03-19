@@ -1,0 +1,41 @@
+package com.tour.controller.ticketing;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.tour.DAO.BoardDAO;
+import com.tour.VO.BoardVO;
+import com.tour.controller.Action;
+
+public class BoardDetailAction implements Action {
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("BoardDetailAction");
+		
+		String num = request.getParameter("num");
+		String nowIndex= request.getParameter("nowIndex");
+		
+		//이전에 봤던 목록 그대로 재현할 자료 받아오기
+		String method = request.getParameter("method"); // 전체리스트 표시할 지, 검색리스트 표시할 지 판단
+		String field = request.getParameter("field");	//뷰에서 넘어온 현재인덱스 문자열
+		String word = request.getParameter("word");	//뷰에서 넘어온 현재인덱스 문자열
+		
+		BoardDAO dao = BoardDAO.getInstance();
+		
+		//해당글 뽑아오기
+		BoardVO vo = dao.getContent(num);
+		
+		request.setAttribute("vo", vo);
+		request.setAttribute("nowIndex", nowIndex);
+		
+		//이전에 봤던 목록 그대로 재현할 자료 보내기
+		request.setAttribute("method", method);
+		request.setAttribute("field", field);
+		request.setAttribute("word", word);
+		
+		
+		return "ticketing/boardDetail";
+	}
+}
+

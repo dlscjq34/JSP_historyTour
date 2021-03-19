@@ -1,0 +1,13 @@
+.center article .detail {
+  display: flex;  
+  justify-content: space-around;
+  /* background: green; */
+}
+.center article .detail li {
+  margin: 30px -50px;
+  font-weight: bold;
+  text-align: left;
+}
+.center article form input {  
+  font-size: 20px;
+}

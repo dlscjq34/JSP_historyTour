@@ -1,0 +1,9 @@
+package com.tour.VO;
+
+public class BoardVO {
+	int num;
+	String title;
+	String writer;
+	String wrtdate;
+	String hit;
+}

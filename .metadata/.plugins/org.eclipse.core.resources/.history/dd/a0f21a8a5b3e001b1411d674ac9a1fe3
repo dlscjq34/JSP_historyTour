@@ -1,0 +1,31 @@
+package com.tour.controller.ticketing;
+
+import java.sql.Timestamp;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.tour.VO.BoardVO;
+import com.tour.controller.Action;
+
+public class WriteProAction implements Action {
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("WriteProAction");
+		
+		BoardVO vo = BoardVO.getInstance();
+		
+		vo.setTitle(request.getParameter(""));
+		vo.setWriter(request.getParameter(""));
+		vo.setContent(request.getParameter(""));
+		vo.setWrtDate(new Timestamp(System.currentTimeMillis()));
+		vo.setHit(0);
+		vo.setFilename(request.getParameter("임시"));
+		vo.setReplyRef(0);//나중에 맞출것
+		vo.setReplyLevel(0);//나중에 맞출것
+		vo.setReplySeq(0);//나중에 맞출것
+		
+		
+		return "ticketing/board";
+	}}

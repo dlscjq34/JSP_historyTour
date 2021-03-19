@@ -1,0 +1,10 @@
+
+.center article form fieldset input{
+  margin: 1% 0;  
+}
+.center article  {
+  position: relative;
+  padding-left: 100px;
+  /* width: 100px;
+  font-size: 20px; */
+}

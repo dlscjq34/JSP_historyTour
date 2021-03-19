@@ -1,0 +1,26 @@
+package com.tour.controller.ticketing;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.tour.DAO.BoardDAO;
+import com.tour.VO.BoardVO;
+import com.tour.controller.Action;
+
+public class BoardDetailProAction implements Action {
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("BoardDetailAction");
+		
+		String num = request.getParameter("num");
+		
+		BoardDAO dao = BoardDAO.getInstance();
+		BoardVO vo = dao.getContent(num);
+		
+		request.setAttribute("vo", vo);
+		
+		return "ticketing/boardDetail";
+	}
+}
+

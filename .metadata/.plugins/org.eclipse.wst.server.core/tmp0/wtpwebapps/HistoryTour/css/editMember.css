@@ -1,0 +1,16 @@
+/* .center article form {
+  background: red;
+} */
+.center article form fieldset {
+  height: 300px;  
+}
+.center article form fieldset input{
+  margin: 1% 0;  
+}
+.center article form .edit {
+  position: relative;
+  margin-top: 5%;
+  left: 40%;
+  width: 100px;
+  font-size: 20px;
+}

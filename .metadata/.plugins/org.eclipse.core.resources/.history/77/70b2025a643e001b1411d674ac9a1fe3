@@ -1,0 +1,66 @@
+package com.tour.controller.ticketing;
+
+import java.io.IOException;
+import java.sql.Timestamp;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.tour.DAO.BoardDAO;
+import com.tour.VO.BoardVO;
+import com.tour.controller.Action;
+
+public class WriteProAction implements Action {
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		System.out.println("WriteProAction");
+		
+		ServletContext application = request.getServletContext();
+		String realPath = application.getRealPath("/upload");
+		System.out.println("File RealPath : "+realPath);//test
+		int maxSize = 1024 * 1024 * 100; // 100MB 
+		
+		//cos lib
+		MultipartRequest multiReq = new MultipartRequest
+				(request, realPath, maxSize, "utf-8", new DefaultFileRenamePolicy());
+		BoardVO vo = BoardVO.getInstance();
+		
+		//원본파일명
+		String originFileName = multiReq.getOriginalFileName("fileName");
+		System.out.println("originFileName : "+originFileName);//test
+		
+		//저장된 실제파일명
+		String storedFileName = multiReq.getFilesystemName("fileName");
+		System.out.println("storedFileName : "+storedFileName);//test
+		
+		//사용자 아이디 색출
+		HttpSession session = request.getSession();//세션객체
+		session.getAttribute("id");
+		
+		
+		vo.setTitle(multiReq.getParameter("title"));
+		vo.setWriter(multiReq.getParameter("writer"));
+		vo.setContent(multiReq.getParameter("content"));
+		vo.setWrtDate(new Timestamp(System.currentTimeMillis()));
+		vo.setHit(0);
+		vo.setFilename(storedFileName);
+		vo.setReplyRef(0);//나중에 맞출것
+		vo.setReplyLevel(0);//나중에 맞출것
+		vo.setReplySeq(0);//나중에 맞출것
+		
+		
+		
+		
+		
+		BoardDAO dao = BoardDAO.getInstance();
+		
+		dao.addContent(vo);
+		
+		
+		return "redirect:ticketing/board";
+	}}

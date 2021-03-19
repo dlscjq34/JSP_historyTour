@@ -1,0 +1,20 @@
+.center article .detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* background: green; */
+}
+.center article .detail li {
+  margin: 30px -50px;
+  font-weight: bold;
+}
+.center article .detail img {
+  width: 400px;
+}
+.center article form input {
+  position: relative;
+  top: 20%;
+  left: 60%;
+  width: 100px;
+  font-size: 20px;
+}

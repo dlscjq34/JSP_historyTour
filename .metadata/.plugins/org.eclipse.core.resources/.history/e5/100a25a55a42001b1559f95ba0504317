@@ -1,0 +1,43 @@
+package com.tour.controller.member;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.tour.DAO.MemberDAO;
+import com.tour.VO.BoardVO;
+import com.tour.VO.MemberVO;
+import com.tour.controller.Action;
+
+public class JoinMemberProAction implements Action {	// ȸ������ó�� ��Ʈ�ѷ�
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("JoinMemberProAction");
+		
+		MemberVO vo = MemberVO.getInstance();
+		MemberDAO dao = MemberDAO.getInstance();
+		
+
+		vo.setId(request.getParameter("id")); 
+		vo.setPswd(request.getParameter("pswd")); 
+		vo.setName(request.getParameter("name")); 
+		vo.setBirth(request.getParameter("birth")); 
+		vo.setGender(Integer.parseInt(request.getParameter("gender"))); 
+		vo.setTel(request.getParameter("tel")); 
+		vo.setAddress(request.getParameter("address")); 
+		vo.setRegDate(new Timestamp(System.currentTimeMillis()));
+		
+		List<BoardVO> list = dao.
+
+			
+		
+		dao.addMember(vo);
+		
+		
+		
+		return "redirect:login.do";
+	}}

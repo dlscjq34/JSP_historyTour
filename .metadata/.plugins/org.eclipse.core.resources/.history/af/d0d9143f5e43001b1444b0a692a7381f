@@ -1,0 +1,30 @@
+package com.tour.controller.member;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.tour.DAO.MemberDAO;
+import com.tour.controller.Action;
+
+public class JoinCheckAction implements Action {
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("JoinCheckAction");
+		
+		String id = request.getParameter("id");
+		
+		MemberDAO dao = MemberDAO.getInstance();
+		boolean dupCheck = false;
+		
+		if(dao.checkJoinedMember(id) != 0) {
+			dupCheck = true;
+		}
+		
+		request.setAttribute("id", id);
+		request.setAttribute("dupCheck", dupCheck);
+		
+		return "member/joinCheck";
+	}
+	
+}

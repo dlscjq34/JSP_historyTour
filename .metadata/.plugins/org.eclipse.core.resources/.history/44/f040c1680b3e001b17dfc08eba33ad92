@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <jsp:include page="/WEB-INF/views/include/head.jsp" />
+    <!-- <link rel="stylesheet" href="css/board.css"> -->
+</head>
+<body>
+    <!-- <header> -->
+    <jsp:include page="/WEB-INF/views/include/header.jsp" />
+
+
+    <!-- <aside> <article> -->
+    <div class="center">
+        <jsp:include page="/WEB-INF/views/include/aside.jsp" />
+    
+        <article>
+            <h1>게시글 작성</h1>            
+            <div class="board">
+                <table border="1">
+	                <tr>
+	                    <td>제목 : <input type="text" name="id" id="id" value=""/> </td>
+	                    <td>내용 : <input type="text" name="id" id="id" value=""/> </td>
+	                    <td>첨부파일 : <input type="text" name="id" id="id" value=""/> </td>	                    
+	                </tr>
+                </table>
+                <form action="">
+                    <select name="field" id="field">
+                        <option value="title">제목</option>
+                        <option value="name">이름</option>
+                    </select>
+                    <input type="text" name='word'>
+                    <input type="submit" name='submit' value="검색">
+                </form>
+            </div>           
+            
+			<input type="button" name='write' value="글쓰기" onclick="location.href='write.do'">
+        </article>
+    </div>
+    
+    
+    <!-- <footer> -->
+    <jsp:include page="/WEB-INF/views/include/footer.jsp" />
+
+    
+</body>
+</html>

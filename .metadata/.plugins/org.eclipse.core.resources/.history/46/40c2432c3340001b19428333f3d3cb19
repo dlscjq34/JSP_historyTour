@@ -1,0 +1,25 @@
+package com.tour.controller.ticketing;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.tour.DAO.BoardDAO;
+import com.tour.VO.BoardVO;
+import com.tour.controller.Action;
+
+public class BoardDeleteProAction implements Action {
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("BoardDeleteProAction");
+		
+		int num = Integer.parseInt(request.getParameter("num"));
+		
+		BoardDAO dao = BoardDAO.getInstance();
+		dao.delete(num);
+		
+		return "redirect:board.do";
+	}
+}
+
+// 파일 삭제 작업할 것
